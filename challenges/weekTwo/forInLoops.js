@@ -8,17 +8,17 @@
     - a key - so think a key in an object - goes IN to a lock for it to correctly work and unlock. So for in loops are best used with objects, and that means for of loops are best used with arrays
 */
 ​
-let obj = {
-    key1: 'value', // 1
-    key2: 'value', // 2
-    key3: 'value'  // 3
-}
+//let obj = {
+ //   key1: 'value', // 1
+  //  key2: 'value', // 2
+  //  key3: 'value'  // 3
+//}
 ​
-console.log(Object.keys(obj).length);
+//console.log(Object.keys(obj).length);
 ​
-for(key of obj){
-    console.log(key) // error: object is not iterable
-}
+//for(key of obj){
+    //console.log(key) // error: object is not iterable
+//}
 ​
 /* BRONZE
 ​
@@ -39,9 +39,49 @@ for(key of obj){
 */
 
 
+let fellowshipOfTheRing = {
+    members: {
+        Gandalf: 'Staff',
+        Frodo: 'Sting',
+        Sam: 'Lembas Bread',
+        Aragorn: 'Anduril',
+        Legolas: 'Bow of the Galadhrim',
+        Gimli: 'Walking Axe',
+        Pippin: 'Barrow Blades',
+        Merry: 'Barrow Blades',
+        Boromir: 'Horn of Gondor'
+    },
+    purpose: "To take the One Ring to Mordor, where it is to be \"cast into the fiery chasm from whence it came,\" in order for it to be destroyed and Sauron\'s power to come to an end.",
+    formed: '25 October, 3018',
+    dissolved: '26 February, 3019'
+ }
+
+ // //Bronze
+// for (member in fellowshipOfTheRing.members){
+//     console.log(member);
+// }
 
 
+//Silver
+
+for (member in fellowshipOfTheRing.members) { 
+    if (member[0] !== "A" ) {
+        console.log(`${member}'s name does not begin with a vowel`)
+    } else {
+        console.log(`${member}'s name does begin with a vowel`)
+    }
+}
 
 
+//Gold
+
+let arr = [];
+
+for (member in fellowshipOfTheRing.members) {
+    if (member[0] !== "A" && member[0] !== "E" && member[0] !== "I" && member[0] !== "O" && member[0] !== "U") {
+        arr.push(member);
+    }
+}
+console.log(arr);
 
 
